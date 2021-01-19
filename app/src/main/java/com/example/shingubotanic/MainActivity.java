@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     Intent i;
     View.OnClickListener cl;
-// test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
