@@ -37,6 +37,8 @@ public class smart extends MainActivity  implements MapView.POIItemEventListener
     private MapView mapView;
 
 
+    //하이하이
+
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 1000;
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION};
