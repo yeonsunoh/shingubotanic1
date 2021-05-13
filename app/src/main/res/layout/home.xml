@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgi"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -28,40 +27,12 @@
             android:id="@+id/button1"
             android:layout_width="220dp"
             android:layout_height="70dp"
-            android:layout_above="@id/button2"
             android:layout_centerInParent="true"
             android:layout_marginBottom="25dp"
             android:background="@android:color/transparent"
             app:srcCompat="@drawable/smart" />
 
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_above="@id/button3"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="25dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/tourguide" />
 
-        <ImageButton
-            android:id="@+id/button3"
-            android:layout_width="220dp"
-            android:layout_height="70dp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="25dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/event" />
-
-        <ImageButton
-            android:id="@+id/button4"
-            android:layout_width="220dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/button3"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="25dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/navigation" />
 
 
 

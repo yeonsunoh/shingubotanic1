@@ -27,9 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".smart"></activity>
-        <activity android:name=".guide"></activity>
-        <activity android:name=".event"></activity>
-        <activity android:name=".map"></activity>
         <activity android:name=".home"></activity>
 
 

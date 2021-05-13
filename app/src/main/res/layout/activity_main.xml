@@ -13,18 +13,6 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <VideoView
-            android:id="@+id/videoview"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp" />
 
         <ImageButton
             android:id="@+id/home"
