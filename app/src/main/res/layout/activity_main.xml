@@ -6,35 +6,19 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
         <ImageButton
-            android:id="@+id/home"
-            android:layout_width="fill_parent"
-            android:layout_height="80dp"
-            android:foregroundGravity="center_horizontal"
-            android:layout_margin="10dp"
+            android:id="@+id/button1"
+            android:layout_width="220dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="25dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/shingu" />
+            app:srcCompat="@drawable/smart" />
 
-        <Button
-            android:id="@+id/button"
-            android:background="#00ff0000"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp" />
     </RelativeLayout>
 </LinearLayout>

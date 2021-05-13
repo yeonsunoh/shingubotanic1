@@ -1,35 +1,36 @@
 package com.example.shingubotanic;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.VideoView;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
-    Intent i;
+
+    ImageButton b1;
     View.OnClickListener cl;
+    Intent i;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
+
+        b1 = (ImageButton) findViewById(R.id.button1);
 
         cl = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.button:
+            public void onClick(View v) {
+                switch ( v.getId() ) {
+                    case R.id.button1 :
                         i = new Intent(getApplicationContext(), home.class);
                         startActivity(i);
+                        break;
                 }
             }
         };
-        button.setOnClickListener(cl);
+        b1.setOnClickListener(cl);
     }
 }
