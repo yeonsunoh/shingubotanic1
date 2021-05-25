@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ import androidx.core.content.ContextCompat;
 
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
+import net.daum.mf.map.api.MapPolyline;
 import net.daum.mf.map.api.MapReverseGeoCoder;
 import net.daum.mf.map.api.MapView;
 
@@ -66,6 +68,27 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
         // 줌 아웃
         mapView.zoomOut(true);
 
+
+
+        MapPolyline polyline = new MapPolyline();
+        polyline.setTag(1000);
+        polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
+
+// Polyline 좌표 지정.
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457));
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43529936421379,127.07952713349141)); //15습지생태원
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43619319999999,127.07871640000008)); //16고층습지원
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993)); //18가을단풍길
+        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
+
+// Polyline 지도에 올리기.
+        mapView.addPolyline(polyline);
+        polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
 
         cl = new View.OnClickListener() {
             @Override
