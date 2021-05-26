@@ -21,8 +21,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import net.daum.mf.map.api.CameraUpdateFactory;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
+import net.daum.mf.map.api.MapPointBounds;
 import net.daum.mf.map.api.MapPolyline;
 import net.daum.mf.map.api.MapReverseGeoCoder;
 import net.daum.mf.map.api.MapView;
@@ -33,6 +35,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
     ImageButton home;
     View.OnClickListener cl;
     Intent i;
+    Button b1, b2, b3;
 
     private static final String LOG_TAG = "MainActivity";
 
@@ -52,6 +55,11 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
         home = (ImageButton) findViewById(R.id.home);
         mapView = (MapView) findViewById(R.id.map_view);
         mapView.setCurrentLocationEventListener(this);
+        b1 = (Button) findViewById(R.id.button1);
+        b2 = (Button) findViewById(R.id.button2);
+        b3 = (Button) findViewById(R.id.button3);
+
+
 
 
         if (!checkLocationServicesStatus()) {
@@ -88,7 +96,205 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
 // Polyline 지도에 올리기.
         mapView.addPolyline(polyline);
-        polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
+        MapPointBounds mapPointBounds = new MapPointBounds(polyline.getMapPoints());
+        int padding = 100;
+        mapView.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
+
+        MapPoint mapPoint1= MapPoint.mapPointWithGeoCoord(37.43374990000003, 127.08111759999997);//좌표에 마커를 찍는거
+        MapPOIItem marker1 = new MapPOIItem();
+        marker1.setItemName("중앙광장");//말풍선
+        marker1.setTag(1);
+        marker1.setMapPoint(mapPoint1);
+        marker1.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker1.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint2= MapPoint.mapPointWithGeoCoord(37.43378160000002, 127.08068609999998);
+        MapPOIItem marker2 = new MapPOIItem();
+        marker2.setItemName("하늘정원");
+        marker2.setTag(2);
+        marker2.setMapPoint(mapPoint2);
+        marker2.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker2.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint3= MapPoint.mapPointWithGeoCoord(37.43405849102472, 127.08087070726651);
+        MapPOIItem marker3 = new MapPOIItem();
+        marker3.setItemName("비스타정원");
+        marker3.setTag(3);
+        marker3.setMapPoint(mapPoint3);
+        marker3.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker3.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint4= MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997);
+        MapPOIItem marker4 = new MapPOIItem();
+        marker4.setItemName("정통정원");
+        marker4.setTag(4);
+        marker4.setMapPoint(mapPoint4);
+        marker4.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker4.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint5= MapPoint.mapPointWithGeoCoord(37.43441749999999, 127.0810457);
+        MapPOIItem marker5 = new MapPOIItem();
+        marker5.setItemName("작약원");
+        marker5.setTag(5);
+        marker5.setMapPoint(mapPoint5);
+        marker5.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker5.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); //
+
+        MapPoint mapPoint6= MapPoint.mapPointWithGeoCoord(37.434603651775085, 127.08064936148412);
+        MapPOIItem marker6 = new MapPOIItem();
+        marker6.setItemName("두꺼비분수");
+        marker6.setTag(6);
+        marker6.setMapPoint(mapPoint6);
+        marker6.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양
+        marker6.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint7= MapPoint.mapPointWithGeoCoord(37.43453092199691, 127.08023793052985);
+        MapPOIItem marker7 = new MapPOIItem();
+        marker7.setItemName("어린이정원");
+        marker7.setTag(7);
+        marker7.setMapPoint(mapPoint7);
+        marker7.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker7.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint8= MapPoint.mapPointWithGeoCoord(37.43440920000004, 127.08032980000007);
+        MapPOIItem marker8 = new MapPOIItem();
+        marker8.setItemName("오감정원");
+        marker8.setTag(8);
+        marker8.setMapPoint(mapPoint8);
+        marker8.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker8.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint9= MapPoint.mapPointWithGeoCoord(37.43431240322188, 127.08000265298142);
+        MapPOIItem marker9 = new MapPOIItem();
+        marker9.setItemName("수목관찰원");
+        marker9.setTag(9);
+        marker9.setMapPoint(mapPoint9);
+        marker9.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker9.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint10= MapPoint.mapPointWithGeoCoord(37.43516570835482, 127.07920936229561);
+        MapPOIItem marker10 = new MapPOIItem();
+        marker10.setItemName("약초원");
+        marker10.setTag(10);
+        marker10.setMapPoint(mapPoint10);
+        marker10.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker10.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint11= MapPoint.mapPointWithGeoCoord(37.43537991201445, 127.0788627385964);
+        MapPOIItem marker11 = new MapPOIItem();
+        marker11.setItemName("메타세쿼이아길");
+        marker11.setTag(11);
+        marker11.setMapPoint(mapPoint11);
+        marker11.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker11.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint12= MapPoint.mapPointWithGeoCoord(37.43497920000003, 127.07983260000003);
+        MapPOIItem marker12 = new MapPOIItem();
+        marker12.setItemName("멸종위기 식물원");
+        marker12.setTag(12);
+        marker12.setMapPoint(mapPoint12);
+        marker12.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker12.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint13= MapPoint.mapPointWithGeoCoord(37.43545487038663, 127.079948650858);
+        MapPOIItem marker13 = new MapPOIItem();
+        marker13.setItemName("그라스품종원");
+        marker13.setTag(13);
+        marker13.setMapPoint(mapPoint13);
+        marker13.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker13.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint14= MapPoint.mapPointWithGeoCoord(37.4353757, 127.07966280000005);
+        MapPOIItem marker14 = new MapPOIItem();
+        marker14.setItemName("꽃무릇군락지");
+        marker14.setTag(14);
+        marker14.setMapPoint(mapPoint14);
+        marker14.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker14.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint15= MapPoint.mapPointWithGeoCoord(37.43529936421379, 127.07952713349141);
+        MapPOIItem marker15 = new MapPOIItem();
+        marker15.setItemName("습지생태원");
+        marker15.setTag(15);
+        marker15.setMapPoint(mapPoint15);
+        marker15.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker15.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint16= MapPoint.mapPointWithGeoCoord(37.43619319999999, 127.07871640000008);
+        MapPOIItem marker16 = new MapPOIItem();
+        marker16.setItemName("고층습지원");
+        marker16.setTag(16);
+        marker16.setMapPoint(mapPoint16);
+        marker16.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker16.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint17= MapPoint.mapPointWithGeoCoord(37.436818099999975, 127.07884680000006);
+        MapPOIItem marker17 = new MapPOIItem();
+        marker17.setItemName("포도원");
+        marker17.setTag(17);
+        marker17.setMapPoint(mapPoint17);
+        marker17.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker17.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint18= MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993);
+        MapPOIItem marker18 = new MapPOIItem();
+        marker18.setItemName("단풍나무길");
+        marker18.setTag(18);
+        marker18.setMapPoint(mapPoint18);
+        marker18.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker18.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint19= MapPoint.mapPointWithGeoCoord(37.43732969999999 , 127.07770260000007 );
+        MapPOIItem marker19 = new MapPOIItem();
+        marker19.setItemName("억새원");
+        marker19.setTag(19);
+        marker19.setMapPoint(mapPoint19);
+        marker19.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker19.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint20= MapPoint.mapPointWithGeoCoord(37.43831869999999 , 127.07702510000001 );
+        MapPOIItem marker20 = new MapPOIItem();
+        marker20.setItemName("라일락원");
+        marker20.setTag(20);
+        marker20.setMapPoint(mapPoint20);
+        marker20.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker20.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        MapPoint mapPoint21= MapPoint.mapPointWithGeoCoord(37.43484208519403 , 127.08035347746568 );
+        MapPOIItem marker21 = new MapPOIItem();
+        marker21.setItemName("A에코센터");
+        marker21.setTag(21);
+        marker21.setMapPoint(mapPoint21);
+        marker21.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker21.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+
+
+
+
+        mapView.addPOIItem(marker1);
+        mapView.addPOIItem(marker2);
+        mapView.addPOIItem(marker3);
+        mapView.addPOIItem(marker4);
+        mapView.addPOIItem(marker5);
+        mapView.addPOIItem(marker6);
+        mapView.addPOIItem(marker7);
+        mapView.addPOIItem(marker8);
+        mapView.addPOIItem(marker9);
+        mapView.addPOIItem(marker10);
+        mapView.addPOIItem(marker11);
+        mapView.addPOIItem(marker12);
+        mapView.addPOIItem(marker13);
+        mapView.addPOIItem(marker14);
+        mapView.addPOIItem(marker15);
+        mapView.addPOIItem(marker16);
+        mapView.addPOIItem(marker17);
+        mapView.addPOIItem(marker18);
+        mapView.addPOIItem(marker19);
+        mapView.addPOIItem(marker20);
+        mapView.addPOIItem(marker21);
+
+
 
         cl = new View.OnClickListener() {
             @Override
@@ -97,6 +303,15 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                     case R.id.home :
                         i = new Intent(getApplicationContext(), home.class);
                         startActivity(i);
+                        break;
+                    case R.id.button1:
+                        //~~~~~~~~~
+                        break;
+                    case R.id.button2:
+                        //~~~~~~~~~
+                        break;
+                    case R.id.button3:
+                        //~~~~~~~~~
                         break;
 
                 }
