@@ -317,8 +317,21 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                     case R.id.button1:
                         mapView.removePolyline(polyline);
                         mapView.removeAllPolylines();
-                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
-                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433681, 127.080833));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433871,127.080796));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433815,127.080666));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433963,127.080558));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433847,127.080684));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.434286,127.080644));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.434218,127.08084));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.434634,127.080587));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.434631,127.080024));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.434946,127.080272));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.435213,127.080114));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.435332,127.080365));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.435426,127.079775));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.435274,127.079558));
+                        polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.435119,127.079433));
 
                         polylines.setLineColor(Color.argb(100, 0, 0, 255));
                         mapView.removeAllPOIItems();
