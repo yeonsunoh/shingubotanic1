@@ -325,15 +325,28 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                     case R.id.button2:
                         //봄 마커, 폴리라인
                         mapView.removeAllPolylines();
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944));
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997));
-                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004)); //입구
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997)); //1중앙광장
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.433893499999975, 127.0808012)); //1-3
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998)); //2하늘정원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944)); //D곤충생태관
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997)); //4전통정원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.4343151,127.08108270000002)); //4-2
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457)); //5작약원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.4344465,127.08083999999997)); //5-2
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43439109999999,127.08017229999996)); //5-4
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43466556958514,127.07969404356436)); //5-6
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43504329018735,127.07952524771031)); //5-8
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43529936421379,127.07952713349141)); //15습지생태원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43546399999999, 127.07959540000002)); //15-2
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.4355383, 127.07924389999994)); //15-4
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43569849999999, 127.07892990000005)); //15-6
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.435923399999986, 127.07885570000008)); //15-8
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43619319999999,127.07871640000008)); //16고층습지원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.4365068, 127.07823580000002)); //16-2
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43671449999999, 127.07783919999997)); //16-4
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993)); //18가을단풍길
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.4383086, 127.07716189999996)); //18-2
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
 
                         polyline.setLineColor(Color.argb(100, 255, 0, 0));
