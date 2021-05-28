@@ -79,6 +79,8 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
 
         MapPolyline polyline = new MapPolyline();
+        //MapPolyline polyline1 = new MapPolyline();
+        //polyline1.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
         //polyline.setTag(1000);
         //polyline 객체에 임의의 정수값 지정 가능(특정 폴리라인 찾을 때 사용 가능)
         //polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
@@ -311,7 +313,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         startActivity(i);
                         break;
                     case R.id.button1:
-                        mapView.removeAllPolylines();
+                        mapView.removePolyline(polyline);
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
 
@@ -324,7 +326,9 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         break;
                     case R.id.button2:
                         //봄 마커, 폴리라인
-                        mapView.removeAllPolylines();
+                        //mapView.removePolyline(polyline);
+                        mapView.removePolyline(polyline);
+                        //mapView.addPolyline(polyline1);
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004)); //입구
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997)); //1중앙광장
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.433893499999975, 127.0808012)); //1-3
