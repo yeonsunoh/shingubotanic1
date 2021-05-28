@@ -79,22 +79,22 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
 
         MapPolyline polyline = new MapPolyline();
-        polyline.setTag(1000);
+        //polyline.setTag(1000);
         //polyline 객체에 임의의 정수값 지정 가능(특정 폴리라인 찾을 때 사용 가능)
         //polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
 
 // Polyline 좌표 지정.
         //polyline 객체가 mapView에 등록된 후에는 점들을 추가해도 지도화면애 반영x
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457));
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43529936421379,127.07952713349141)); //15습지생태원
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43619319999999,127.07871640000008)); //16고층습지원
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993)); //18가을단풍길
-        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457));
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43529936421379,127.07952713349141)); //15습지생태원
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43619319999999,127.07871640000008)); //16고층습지원
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993)); //18가을단풍길
+//        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
 
 // Polyline 지도에 올리기.
 
@@ -311,14 +311,41 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         startActivity(i);
                         break;
                     case R.id.button1:
+                        mapView.removeAllPolylines();
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
+
+                        polyline.setLineColor(Color.argb(100, 0, 0, 255));
                         mapView.removeAllPOIItems();
+
                         mapView.addPOIItem(marker21);
                         mapView.addPOIItem(marker1);
-                        //mapView.addPolyline(polyline);
+                        mapView.addPolyline(polyline);
                         break;
                     case R.id.button2:
+                        //봄 마커, 폴리라인
+                        mapView.removeAllPolylines();
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43422110000004,127.0805944));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43428850000004, 127.08082939999997));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43441749999999,127.0810457));
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43529936421379,127.07952713349141)); //15습지생태원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43619319999999,127.07871640000008)); //16고층습지원
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.437062299999994, 127.07769869999993)); //18가을단풍길
+                        polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
+
+                        polyline.setLineColor(Color.argb(100, 255, 0, 0));
                         mapView.removeAllPOIItems();
-                        mapView.addPOIItem(marker21);
+
+                        mapView.addPOIItem(marker1); //중앙정원
+                        mapView.addPOIItem(marker2); //하늘정원
+                        mapView.addPOIItem(marker5); //작약원
+                        mapView.addPOIItem(marker21); //에코센터전망대
+                        mapView.addPOIItem(marker15); //습지생태원
+                        mapView.addPOIItem(marker16); //고층습지원
+                        mapView.addPOIItem(marker20); //라일락원
                         mapView.addPolyline(polyline);
                         break;
                     case R.id.button3:
