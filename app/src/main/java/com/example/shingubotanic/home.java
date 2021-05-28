@@ -317,6 +317,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                     case R.id.button1:
                         mapView.removePolyline(polyline);
                         mapView.removeAllPolylines();
+                        //여름코스
                         polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433681, 127.080833));//중앙광장
                         polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433871,127.080796));
                         polylines.addPoint(MapPoint.mapPointWithGeoCoord(37.433815,127.080666));
@@ -344,7 +345,6 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         //봄 마커, 폴리라인
                         mapView.removeAllPolylines();
                         mapView.removePolyline(polylines);
-                        //mapView.addPolyline(polyline1);
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004)); //입구
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997)); //1중앙광장
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.433893499999975, 127.0808012)); //1-3
