@@ -61,14 +61,14 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
 
 
-
+/*
         if (!checkLocationServicesStatus()) {
 
             showDialogForLocationServiceSetting();
         }else {
 
             checkRunTimePermission();
-        }
+        }*/
 // 밑 구현부는 줌고정값을 신구대 식물원 좌표로 지정하고 확대 축소 비율 고정값을 줌레벨 2로 지정한것이다
         mapView.setMapCenterPointAndZoomLevel(MapPoint.mapPointWithGeoCoord(37.4340312970034, 127.08084512504904), 2, true);
         // 줌 인
@@ -405,7 +405,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
     public void onCurrentLocationUpdateCancelled(MapView mapView) {
 
     }
-
+/*
     @Override
     public void onRequestPermissionsResult(int permsRequestCode,
                                            @NonNull String[] permissions,
@@ -536,7 +536,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
                 break;
         }
-    }
+    }*/
     public boolean checkLocationServicesStatus() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
