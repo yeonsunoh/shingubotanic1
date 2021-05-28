@@ -337,8 +337,12 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         polylines.setLineColor(Color.argb(100, 0, 0, 255));
                         mapView.removeAllPOIItems();
 
-                        mapView.addPOIItem(marker21);
-                        mapView.addPOIItem(marker1);
+                        mapView.addPOIItem(marker1); //중앙광장
+                        mapView.addPOIItem(marker2); //하늘정원
+                        mapView.addPOIItem(marker4); //전통정원
+                        mapView.addPOIItem(marker6); //두꺼비분수
+                        mapView.addPOIItem(marker15); //습지생태원
+                        mapView.addPOIItem(marker11); //메타세쿼이아길
                         mapView.addPolyline(polylines);
                         break;
                     case R.id.button2:
