@@ -313,6 +313,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         startActivity(i);
                         break;
                     case R.id.button1:
+                        mapView.removeAllPolylines();
                         mapView.removePolyline(polyline);
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
@@ -326,7 +327,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         break;
                     case R.id.button2:
                         //봄 마커, 폴리라인
-                        //mapView.removePolyline(polyline);
+                        mapView.removeAllPolylines();
                         mapView.removePolyline(polyline);
                         //mapView.addPolyline(polyline1);
                         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004)); //입구
