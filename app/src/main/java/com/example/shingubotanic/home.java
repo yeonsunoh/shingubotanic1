@@ -80,9 +80,11 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
         MapPolyline polyline = new MapPolyline();
         polyline.setTag(1000);
-        polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
+        //polyline 객체에 임의의 정수값 지정 가능(특정 폴리라인 찾을 때 사용 가능)
+        //polyline.setLineColor(Color.argb(100, 0, 0, 255)); // Polyline 컬러 지정.
 
 // Polyline 좌표 지정.
+        //polyline 객체가 mapView에 등록된 후에는 점들을 추가해도 지도화면애 반영x
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43380210000001, 127.08141320000004));
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43374990000003,127.08111759999997));
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43378160000002,127.08068609999998));
@@ -95,10 +97,11 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
         polyline.addPoint(MapPoint.mapPointWithGeoCoord(37.43831869999999,127.07702510000001)); //20라일락원
 
 // Polyline 지도에 올리기.
-        mapView.addPolyline(polyline);
-        MapPointBounds mapPointBounds = new MapPointBounds(polyline.getMapPoints());
-        int padding = 100;
-        mapView.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
+
+        //mapView.addPolyline(polyline);
+        //MapPointBounds mapPointBounds = new MapPointBounds(polyline.getMapPoints());
+        //int padding = 100;
+        //mapView.moveCamera(CameraUpdateFactory.newMapPointBounds(mapPointBounds, padding));
 
         MapPoint mapPoint1= MapPoint.mapPointWithGeoCoord(37.43374990000003, 127.08111759999997);//좌표에 마커를 찍는거
         MapPOIItem marker1 = new MapPOIItem();
@@ -272,6 +275,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
 
 
 
+        /*
         mapView.addPOIItem(marker1);
         mapView.addPOIItem(marker2);
         mapView.addPOIItem(marker3);
@@ -294,6 +298,8 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
         mapView.addPOIItem(marker20);
         mapView.addPOIItem(marker21);
 
+         */
+
 
 
         cl = new View.OnClickListener() {
@@ -305,10 +311,15 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
                         startActivity(i);
                         break;
                     case R.id.button1:
-                        //~~~~~~~~~
+                        mapView.removeAllPOIItems();
+                        mapView.addPOIItem(marker21);
+                        mapView.addPOIItem(marker1);
+                        //mapView.addPolyline(polyline);
                         break;
                     case R.id.button2:
-                        //~~~~~~~~~
+                        mapView.removeAllPOIItems();
+                        mapView.addPOIItem(marker21);
+                        mapView.addPolyline(polyline);
                         break;
                     case R.id.button3:
                         //~~~~~~~~~
@@ -318,6 +329,10 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
             }
         };
         home.setOnClickListener(cl);
+        b1.setOnClickListener(cl);
+        b2.setOnClickListener(cl);
+        b3.setOnClickListener(cl);
+
 
     }
 
@@ -473,6 +488,7 @@ public class home extends MainActivity  implements MapView.CurrentLocationEventL
         });
         builder.create().show();
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
