@@ -41,37 +41,41 @@
         android:id="@+id/linear">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btn1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Text 1" />
+            android:text="봄 코스" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Text 2" />
+            android:text="여름 코스" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Text 3" />
+            android:text="가을 코스" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="겨울 코스" />
+
+
     </LinearLayout>
 
-
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <net.daum.mf.map.api.MapView
-            android:id="@+id/map_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
+        android:layout_height="match_parent">
 
-
+    </FrameLayout>
 
 </LinearLayout>
